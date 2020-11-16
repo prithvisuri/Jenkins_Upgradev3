@@ -1,4 +1,4 @@
-FROM openjdk:8
-ADD /target/dependency/webapp-runner.jar /usr/local/tomcat/
+FROM tomcat
+ADD /target/java-tomcat-maven-example.war /usr/local/tomcat/
 EXPOSE 8080
-CMD java -jar /webapp-runner.jar
+CMD ["catalina.sh", "run"]
